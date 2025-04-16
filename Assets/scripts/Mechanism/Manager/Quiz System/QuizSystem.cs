@@ -1,7 +1,15 @@
 using System.Collections;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class QuizData
+{
+    public string question;
+    public string answer;
+}
 
 public class QuizSystem : MonoBehaviour
 {
@@ -13,6 +21,10 @@ public class QuizSystem : MonoBehaviour
     public float textDuration = 1;
     public LeanTweenType easingType;
 
+    [Header("Inputfield Settings")]
+    [SerializeField] TMP_InputField inputField;
+    [SerializeField] TextMeshProUGUI answerText;
+
     [Header("Script Reference")]
     public PlayerController playerController;
 
@@ -20,21 +32,52 @@ public class QuizSystem : MonoBehaviour
     [SerializeField] AudioClip rightAnswerClip;
     [SerializeField] AudioClip wrongAnswerClip;
 
-    private bool isButtonPressed = false; // Penambahan variabel untuk mengecek apakah tombol sudah ditekan
+    [Header("Quiz List")]
+    public List<QuizData> quizList = new List<QuizData>();
+
+    private QuizData currentQuiz;
+    private bool isButtonPressed = false;
 
     void Start()
     {
-        // Initialization code
+        SetRandomQuiz();
     }
 
-    public void TrueAnswer()
+    void SetRandomQuiz()
     {
-        if (isButtonPressed) return; // Cek apakah tombol sudah ditekan sebelumnya
-        isButtonPressed = true; // Set tombol menjadi sudah ditekan
+        if (quizList.Count == 0)
+        {
+            Debug.LogWarning("Quiz list kosong!");
+            return;
+        }
 
+        int index = Random.Range(0, quizList.Count);
+        currentQuiz = quizList[index];
+
+        answerText.text = currentQuiz.question;
+        inputField.text = "";
+        inputField.ActivateInputField();
+    }
+
+    public void CheckAnswer()
+    {
+        string userInput = inputField.text.Trim();
+
+        if (userInput == currentQuiz.answer)
+        {
+            TrueAnswer();
+        }
+        else
+        {
+            WrongAnswer();
+        }
+    }
+
+    void TrueAnswer()
+    {
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
-        GameObject.Destroy(quizTrigger);
+        Destroy(quizTrigger);
         LeanTween.scale(rightAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
 
         playerController.enabled = true;
@@ -51,18 +94,14 @@ public class QuizSystem : MonoBehaviour
         }
     }
 
-    public void WrongAnswer()
+    void WrongAnswer()
     {
-        if (isButtonPressed) return; // Cek apakah tombol sudah ditekan sebelumnya
-        isButtonPressed = true; // Set tombol menjadi sudah ditekan
-
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
         LeanTween.scale(wrongAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
 
         playerController.enabled = true;
-
-        GameObject.Destroy(quizTrigger);
+        Destroy(quizTrigger);
         AudioManager.instance.PlaySound(wrongAnswerClip);
     }
 

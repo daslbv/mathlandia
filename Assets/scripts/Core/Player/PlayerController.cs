@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     AudioSource footstepAudioSource;
     [SerializeField] private AudioClip[] footstepSounds; // Array of footstep sounds
-    [SerializeField] DynamicJoystick joystick;
+    [SerializeField] FixedJoystick joystick;
 
     [Header("Script Reference")]
     private PlayerController playerController;
