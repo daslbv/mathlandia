@@ -75,6 +75,7 @@ public class QuizSystem : MonoBehaviour
 
     void TrueAnswer()
     {
+        rightAnswerImage.SetActive(true);
         StartCoroutine(DeactivateQuizPanelWithDelay());
         Time.timeScale = 1;
         Destroy(quizTrigger);
@@ -89,20 +90,23 @@ public class QuizSystem : MonoBehaviour
             if (playerStatus != null)
             {
                 playerStatus.totalQuiz += 1;
-                AudioManager.instance.PlaySound(rightAnswerClip);
+                //AudioManager.instance.PlaySound(rightAnswerClip);
             }
         }
     }
 
     void WrongAnswer()
     {
-        StartCoroutine(DeactivateQuizPanelWithDelay());
+        Debug.Log("WrongAnswer called");
+        wrongAnswerImage.SetActive(true);
         Time.timeScale = 1;
-        LeanTween.scale(wrongAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
-
-        playerController.enabled = true;
-        Destroy(quizTrigger);
-        AudioManager.instance.PlaySound(wrongAnswerClip);
+        LeanTween.scale(wrongAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType).setOnComplete(() =>
+        {
+            LeanTween.scale(wrongAnswerImage, new Vector3(0, 0, 0), 1.3f).setEase(easingType).setOnComplete(() =>
+            {
+                Time.timeScale = 0;
+            });
+        });
     }
 
     private IEnumerator DeactivateQuizPanelWithDelay()
