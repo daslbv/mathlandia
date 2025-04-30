@@ -78,7 +78,7 @@ public class Quiz : MonoBehaviour
             Debug.LogError("quizPanel is not assigned in the inspector.");
         }
 
-        Time.timeScale = 0;        
+      
 
         if (joystick != null)
         {

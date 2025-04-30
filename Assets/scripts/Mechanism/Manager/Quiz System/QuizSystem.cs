@@ -27,6 +27,7 @@ public class QuizSystem : MonoBehaviour
 
     [Header("Script Reference")]
     public PlayerController playerController;
+    public Timer timer;
 
     [Header("Audio Clip")]
     [SerializeField] AudioClip rightAnswerClip;
@@ -41,6 +42,13 @@ public class QuizSystem : MonoBehaviour
     void Start()
     {
         SetRandomQuiz();
+        TimerSet();
+    }
+
+    void TimerSet()
+    {
+        timer.isRunning = true;
+        Time.timeScale = 1;
     }
 
     void SetRandomQuiz()
@@ -77,7 +85,7 @@ public class QuizSystem : MonoBehaviour
     {
         rightAnswerImage.SetActive(true);
         StartCoroutine(DeactivateQuizPanelWithDelay());
-        Time.timeScale = 1;
+        
         Destroy(quizTrigger);
         LeanTween.scale(rightAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
 
@@ -90,6 +98,7 @@ public class QuizSystem : MonoBehaviour
             if (playerStatus != null)
             {
                 playerStatus.totalQuiz += 1;
+                timer.isRunning = false;
                 //AudioManager.instance.PlaySound(rightAnswerClip);
             }
         }
@@ -99,12 +108,12 @@ public class QuizSystem : MonoBehaviour
     {
         Debug.Log("WrongAnswer called");
         wrongAnswerImage.SetActive(true);
-        Time.timeScale = 1;
+        
         LeanTween.scale(wrongAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType).setOnComplete(() =>
         {
             LeanTween.scale(wrongAnswerImage, new Vector3(0, 0, 0), 1.3f).setEase(easingType).setOnComplete(() =>
             {
-                Time.timeScale = 0;
+                
             });
         });
     }
