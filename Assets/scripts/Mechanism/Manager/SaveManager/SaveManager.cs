@@ -14,7 +14,7 @@ public class SaveManager : MonoBehaviour
     public string timerString2;
     public string timerString3;
     public string timerString4;
-    public string timerString5;
+    public string timerString5; // Diganti ke float dikarenakan untuk nilai akumulasi dari waktu dan wrong count
 
     [Header("Wrong Answer Quiz")]
     public int totalWrong1;

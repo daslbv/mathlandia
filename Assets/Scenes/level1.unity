@@ -10104,8 +10104,11 @@ MonoBehaviour:
   quizTrigger: {fileID: 69514353}
   rightAnswerImage: {fileID: 1393263960}
   wrongAnswerImage: {fileID: 1278488227}
+  submitButton: {fileID: 1069217337}
   textDuration: 1
   easingType: 14
+  wrongCounter: 0
+  wrongCounterLevel: Level1
   inputField: {fileID: 1618968783}
   answerText: {fileID: 1702160456}
   playerController: {fileID: 796419335}

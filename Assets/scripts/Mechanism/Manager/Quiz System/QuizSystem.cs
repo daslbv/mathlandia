@@ -18,8 +18,13 @@ public class QuizSystem : MonoBehaviour
     public GameObject quizTrigger;
     public GameObject rightAnswerImage;
     public GameObject wrongAnswerImage;
+    [SerializeField] Button submitButton;
     public float textDuration = 1;
     public LeanTweenType easingType;
+
+    [Header("Wrong Counter")]
+    [SerializeField] int wrongCounter;
+    [SerializeField] string wrongCounterLevel;
 
     [Header("Inputfield Settings")]
     [SerializeField] TMP_InputField inputField;
@@ -77,7 +82,7 @@ public class QuizSystem : MonoBehaviour
         }
         else
         {
-            WrongAnswer();
+            WrongAnswer();            
         }
     }
 
@@ -108,14 +113,45 @@ public class QuizSystem : MonoBehaviour
     {
         Debug.Log("WrongAnswer called");
         wrongAnswerImage.SetActive(true);
-        
+        submitButton.interactable = false;
         LeanTween.scale(wrongAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType).setOnComplete(() =>
         {
+            wrongCounter++;
+            WrongCounter();
             LeanTween.scale(wrongAnswerImage, new Vector3(0, 0, 0), 1.3f).setEase(easingType).setOnComplete(() =>
             {
-                
+                submitButton.interactable = true;
             });
         });
+    }
+
+    void WrongCounter()
+    {
+        if (wrongCounterLevel == "Level1")
+        {
+            SaveManager.instance.totalWrong1 = wrongCounter;
+            SaveManager.instance.Save();
+        }
+        else if (wrongCounterLevel == "Level2")
+        {
+            SaveManager.instance.totalWrong2 = wrongCounter;
+            SaveManager.instance.Save();
+        }
+        else if (wrongCounterLevel == "Level3")
+        {
+            SaveManager.instance.totalWrong3 = wrongCounter;
+            SaveManager.instance.Save();
+        }
+        else if (wrongCounterLevel == "Level4")
+        {
+            SaveManager.instance.totalWrong4 = wrongCounter;
+            SaveManager.instance.Save();
+        }
+        else if (wrongCounterLevel == "Level5")
+        {
+            SaveManager.instance.totalWrong5 = wrongCounter;
+            SaveManager.instance.Save();
+        }
     }
 
     private IEnumerator DeactivateQuizPanelWithDelay()
