@@ -8,21 +8,25 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance { get; private set; }
 
-    //What we want to save
+    //Timer Save
     [Header("Timer")]
-    public string timerString1;
-    public string timerString2;
-    public string timerString3;
-    public string timerString4;
-    public string timerString5; // Diganti ke float dikarenakan untuk nilai akumulasi dari waktu dan wrong count
+    public float timerString1;
+    public float timerString2;
+    public float timerString3;
+    public float timerString4;
+    public float timerString5;
+    public float timerAccumulate;
 
+    //Wrong Answer Quiz Save
     [Header("Wrong Answer Quiz")]
     public int totalWrong1;
     public int totalWrong2;
     public int totalWrong3;
     public int totalWrong4;
     public int totalWrong5;
+    public int wrongAccumulate;
 
+    //Is player already finishing the game?
     [Header("Player Check")]
     public bool isLevelDone;
 
@@ -98,11 +102,11 @@ public class SaveManager : MonoBehaviour
 class PlayerData_Storage
 {
     // Timer Save
-    public string timerString1;
-    public string timerString2;
-    public string timerString3;
-    public string timerString4;
-    public string timerString5;
+    public float timerString1;
+    public float timerString2;
+    public float timerString3;
+    public float timerString4;
+    public float timerString5;
 
     // Wrong Answer Quiz Save
     public int totalWrong1;

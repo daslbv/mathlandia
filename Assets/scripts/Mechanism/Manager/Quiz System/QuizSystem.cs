@@ -95,6 +95,7 @@ public class QuizSystem : MonoBehaviour
         LeanTween.scale(rightAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
 
         playerController.enabled = true;
+        submitButton.interactable = false;
 
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)

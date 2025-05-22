@@ -86,6 +86,12 @@ public class AudioManager : MonoBehaviour
         ChangeSoundVolume(slider.value);
     }
 
+    public void SetAllVolumeFromSlider(Slider slider)
+    {
+        ChangeMusicVolume(slider.value);
+        ChangeSoundVolume(slider.value);
+    }
+
     public float GetMusicVolume()
     {
         return musicSource.volume;
