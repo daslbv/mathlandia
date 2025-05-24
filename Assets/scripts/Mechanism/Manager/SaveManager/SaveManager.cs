@@ -26,9 +26,15 @@ public class SaveManager : MonoBehaviour
     public int totalWrong5;
     public int wrongAccumulate;
 
-    //Is player already finishing the game?
+    // Login System Save
+    [Header("Login System")]
+    public string playerName;
+    public string playerAbsen;
+
+    //Boolean Save
     [Header("Player Check")]
-    public bool isLevelDone;
+    public bool isLevelDone; // Apakah Player sudah menyelesaikan permainan?
+    public bool isLogin; // Apakah Player sudah login?
 
     private void Awake()
     {
@@ -63,8 +69,13 @@ public class SaveManager : MonoBehaviour
             totalWrong4 = data.totalWrong4;
             totalWrong5 = data.totalWrong5;
 
+            // Login System Save
+            playerName = data.playerName;
+            playerAbsen = data.playerAbsen;
+
             // Boolean Save
             isLevelDone = data.isLevelDone;
+            isLogin = data.isLogin;
 
             file.Close();
         }
@@ -90,8 +101,13 @@ public class SaveManager : MonoBehaviour
         data.totalWrong4 = totalWrong4;
         data.totalWrong5 = totalWrong5;
 
+        // Login System Save
+        data.playerName = playerName;
+        data.playerAbsen = playerAbsen;
+
         // Boolean Save
         data.isLevelDone = isLevelDone;
+        data.isLogin = isLogin;
 
         bf.Serialize(file, data);
         file.Close();
@@ -115,6 +131,11 @@ class PlayerData_Storage
     public int totalWrong4;
     public int totalWrong5;
 
+    // Login System Save
+    public string playerName;
+    public string playerAbsen;
+
     // Boolean Save
     public bool isLevelDone;
+    public bool isLogin;
 }
