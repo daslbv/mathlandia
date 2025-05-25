@@ -46,7 +46,7 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Load();
     }
-
+  
     public void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
