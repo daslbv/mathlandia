@@ -37,7 +37,7 @@ public class HomeManager : MonoBehaviour
     public void PlayGame()
     {
         // Load the game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("menulevel");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu Level");
     }
 
     public void SoundPanel()

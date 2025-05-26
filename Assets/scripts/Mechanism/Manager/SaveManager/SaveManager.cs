@@ -33,6 +33,11 @@ public class SaveManager : MonoBehaviour
 
     //Boolean Save
     [Header("Player Check")]
+    public bool isLevel1Complete; // Apakah Level 1 sudah selesai?
+    public bool isLevel2Complete; // Apakah Level 2 sudah selesai?
+    public bool isLevel3Complete; // Apakah Level 3 sudah selesai?
+    public bool isLevel4Complete; // Apakah Level 4 sudah selesai?
+    public bool isLevel5Complete; // Apakah Level 5 sudah selesai?
     public bool isLevelDone; // Apakah Player sudah menyelesaikan permainan?
     public bool isLogin; // Apakah Player sudah login?
 
@@ -76,6 +81,11 @@ public class SaveManager : MonoBehaviour
             // Boolean Save
             isLevelDone = data.isLevelDone;
             isLogin = data.isLogin;
+            isLevel1Complete = data.isLevel1Complete;
+            isLevel2Complete = data.isLevel2Complete;
+            isLevel3Complete = data.isLevel3Complete;
+            isLevel4Complete = data.isLevel4Complete;
+            isLevel5Complete = data.isLevel5Complete;
 
             file.Close();
         }
@@ -108,6 +118,12 @@ public class SaveManager : MonoBehaviour
         // Boolean Save
         data.isLevelDone = isLevelDone;
         data.isLogin = isLogin;
+        data.isLevel1Complete = isLevel1Complete;
+        data.isLevel2Complete = isLevel2Complete;
+        data.isLevel3Complete = isLevel3Complete;
+        data.isLevel4Complete = isLevel4Complete;
+        data.isLevel5Complete = isLevel5Complete;
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -138,4 +154,9 @@ class PlayerData_Storage
     // Boolean Save
     public bool isLevelDone;
     public bool isLogin;
+    public bool isLevel1Complete;
+    public bool isLevel2Complete;
+    public bool isLevel3Complete;
+    public bool isLevel4Complete;
+    public bool isLevel5Complete;
 }

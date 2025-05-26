@@ -90,7 +90,7 @@ public class Checkpoint : MonoBehaviour
             }
 
             // Nonaktifkan collider checkpoint agar tidak bisa disentuh lagi
-            GetComponent<Collider2D>().enabled = false;
+            //GetComponent<Collider2D>().enabled = false;
         }
     }
 }

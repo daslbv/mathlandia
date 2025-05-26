@@ -32,7 +32,11 @@ public class QuizSystem : MonoBehaviour
 
     [Header("Script Reference")]
     public PlayerController playerController;
+    public Quiz quizScript;
     public Timer timer;
+
+    [Header("UI Settings")]
+    [SerializeField] GameObject joystick;
 
     [Header("Audio Clip")]
     [SerializeField] AudioClip rightAnswerClip;
@@ -92,7 +96,11 @@ public class QuizSystem : MonoBehaviour
         StartCoroutine(DeactivateQuizPanelWithDelay());
         
         Destroy(quizTrigger);
-        LeanTween.scale(rightAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType);
+        LeanTween.scale(rightAnswerImage, new Vector3(0.69942f, 0.69942f, 0.69942f), 1.3f).setEase(easingType).setOnComplete(() =>
+        {
+            Destroy(quizPanel);
+            Destroy(quizScript);
+        });
 
         playerController.enabled = true;
         submitButton.interactable = false;
@@ -105,6 +113,7 @@ public class QuizSystem : MonoBehaviour
             {
                 playerStatus.totalQuiz += 1;
                 timer.isRunning = false;
+                joystick.SetActive(true);
                 //AudioManager.instance.PlaySound(rightAnswerClip);
             }
         }

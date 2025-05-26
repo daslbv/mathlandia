@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
-{
-    
-
+{    
     [Header("Script Reference")]
     public PlayerController playerController;
 

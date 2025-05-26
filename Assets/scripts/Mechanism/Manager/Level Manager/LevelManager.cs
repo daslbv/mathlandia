@@ -16,6 +16,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Button resumeButton;
     [SerializeField] Button quitButton;
 
+    [Header("Level Settings")]
+    [SerializeField] string nextLevelName;
+    [SerializeField] GameObject finishCanvas;
+
     [Header("Script Reference")]
     [SerializeField] PlayerStatus playerStatus;
 
@@ -68,8 +72,17 @@ public class LevelManager : MonoBehaviour
         LeanTween.scale(pausedPanel, new Vector3(0f, 0f, 0f), 1f).setEase(LeanTweenType.easeOutSine).setOnComplete(() =>
         {
             pausedPanel.SetActive(false);
-            pauseButton.interactable = true;
-            
+            pauseButton.interactable = true;            
         });
+    }
+
+    public void Home()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu Level"); // Pindah ke Home
+    }
+
+    public void NextLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevelName); // Pindah ke level berikutnya
     }
 }
