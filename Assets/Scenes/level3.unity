@@ -11303,7 +11303,7 @@ Transform:
   m_GameObject: {fileID: 1097742773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42158747, y: -0.7352, z: -10}
+  m_LocalPosition: {x: -0.15666676, y: -0.73354, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11455,46 +11455,46 @@ MonoBehaviour:
   rightAnswerClip: {fileID: 0}
   wrongAnswerClip: {fileID: 0}
   quizList:
-  - question: 15 - 3
-    answer: 12
-  - question: 17 - 6
-    answer: 11
-  - question: 15 - 5
-    answer: 10
-  - question: 19 - 7
-    answer: 12
-  - question: 15 - 4
-    answer: 11
-  - question: 18 - 5
+  - question: 7 + 6
     answer: 13
-  - question: 16 - 6
-    answer: 10
-  - question: 20 - 6
-    answer: 14
-  - question: 19 - 3
-    answer: 16
-  - question: 20 - 5
+  - question: 12 + 3
     answer: 15
-  - question: 17 - 4
-    answer: 13
-  - question: 18 - 4
+  - question: 6 + 5
+    answer: 11
+  - question: 1 + 13
     answer: 14
-  - question: 17 - 7
-    answer: 10
-  - question: 16 - 4
+  - question: '4 +8 '
     answer: 12
-  - question: 19 - 8
-    answer: 11
-  - question: 14 - 2
+  - question: '5 + 15 '
+    answer: 20
+  - question: ' 14 + 2'
+    answer: 16
+  - question: '7 + 7 '
+    answer: 14
+  - question: 3 + 9
     answer: 12
-  - question: 15 - 2
+  - question: 8 + 7
+    answer: 15
+  - question: 9 + 4
     answer: 13
-  - question: 16 - 6
-    answer: 10
-  - question: 13 - 2
+  - question: 14 + 3
+    answer: 17
+  - question: 9 + 9
+    answer: 18
+  - question: 13 + 5
+    answer: 18
+  - question: 8 + 8
+    answer: 16
+  - question: 12 + 5
+    answer: 17
+  - question: 8 + 11
+    answer: 19
+  - question: '4 + 7 '
     answer: 11
-  - question: 19 - 6
-    answer: 13
+  - question: 6 + 6
+    answer: 12
+  - question: 18 + 2
+    answer: 20
 --- !u!1 &1102009134
 GameObject:
   m_ObjectHideFlags: 0
