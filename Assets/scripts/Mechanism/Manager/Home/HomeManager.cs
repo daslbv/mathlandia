@@ -11,6 +11,11 @@ public class HomeManager : MonoBehaviour
     [SerializeField] Button soundButton;
     [SerializeField] Button closeSoundButton;
 
+    [Header("Audio Reference")]
+    [SerializeField] AudioClip bgmSong;
+    [SerializeField] AudioClip startSFx;
+    [SerializeField] AudioClip clickSFX;
+
     private void Awake()
     {
         InitialChecking();
@@ -19,7 +24,7 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.instance.PlayMusic(bgmSong, true);
     }
 
     // Update is called once per frame
@@ -38,6 +43,8 @@ public class HomeManager : MonoBehaviour
     {
         // Load the game scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu Level");
+
+        AudioManager.instance.PlaySound(startSFx);
     }
 
     public void SoundPanel()
@@ -49,6 +56,8 @@ public class HomeManager : MonoBehaviour
         {
             closeSoundButton.interactable = true;
         });
+
+        AudioManager.instance.PlaySound(clickSFX);
     }
 
     public void CloseSoundPanel()
@@ -59,10 +68,13 @@ public class HomeManager : MonoBehaviour
             soundPanel.SetActive(false);
             soundButton.interactable = true;
         });
+
+        AudioManager.instance.PlaySound(clickSFX);
     }
 
     public void Exit()
     {
+        AudioManager.instance.PlaySound(clickSFX);
         // Exit the application
         Application.Quit();
         // If running in the editor, stop playing the scene

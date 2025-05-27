@@ -370,7 +370,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf73f6a758fdb874b9643ad69e81ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2001,7 +2001,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2087677, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1733334354}
@@ -2047,7 +2047,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf73f6a758fdb874b9643ad69e81ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2207,6 +2207,7 @@ MonoBehaviour:
   quizPanel: {fileID: 1100230984}
   buttonInteract: {fileID: 69514353}
   joystick: {fileID: 1256597548}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!1 &198200264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,7 +2613,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2087677, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1969064837}
@@ -2658,7 +2659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf73f6a758fdb874b9643ad69e81ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4043,6 +4044,7 @@ MonoBehaviour:
   quizPanel: {fileID: 725901340}
   buttonInteract: {fileID: 816043216}
   joystick: {fileID: 1256597548}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!1 &463836636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5495,7 @@ MonoBehaviour:
   nextLevelName: Level4
   finishCanvas: {fileID: 1132630977}
   playerStatus: {fileID: 796419342}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!4 &701531292
 Transform:
   m_ObjectHideFlags: 0
@@ -6786,7 +6789,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.0744601, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 436759552}
@@ -6832,7 +6835,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf73f6a758fdb874b9643ad69e81ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13422,8 +13425,8 @@ Transform:
   m_GameObject: {fileID: 1491981355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0744601, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.28, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2033625824}
@@ -13469,7 +13472,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf73f6a758fdb874b9643ad69e81ce51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15242,6 +15245,7 @@ MonoBehaviour:
   quizPanel: {fileID: 1478028946}
   buttonInteract: {fileID: 172738941}
   joystick: {fileID: 1256597548}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!1 &1740613140
 GameObject:
   m_ObjectHideFlags: 0
@@ -16954,6 +16958,7 @@ MonoBehaviour:
   quizPanel: {fileID: 757698972}
   buttonInteract: {fileID: 222874044}
   joystick: {fileID: 1256597548}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!1 &1988187808
 GameObject:
   m_ObjectHideFlags: 0
@@ -17430,6 +17435,7 @@ MonoBehaviour:
   quizPanel: {fileID: 933656200}
   buttonInteract: {fileID: 1491981355}
   joystick: {fileID: 1256597548}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!1 &2037216595
 GameObject:
   m_ObjectHideFlags: 0

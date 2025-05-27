@@ -26,6 +26,9 @@ public class Menu : MonoBehaviour
     [SerializeField] TextMeshProUGUI playerNamaText;
     [SerializeField] TMP_InputField kodeInputField;
 
+    [Header("Audio Reference")]
+    [SerializeField] AudioClip clickSFX;
+
     // Tambahan flag untuk menghindari duplikasi aksi
     private bool sudahTampilkanKodeCanvas = false;
 
@@ -63,11 +66,14 @@ public class Menu : MonoBehaviour
         SaveManager.instance.isLogin = true;
         SaveManager.instance.Save();
 
+        AudioManager.instance.PlaySound(clickSFX);
+
         OpenLevelCanvas();
     }
 
     public void OpenLevelCanvas()
     {
+        AudioManager.instance.PlaySound(clickSFX);
         if (SaveManager.instance.isLogin)
         {
             levelCanvas.SetActive(true);
@@ -100,6 +106,8 @@ public class Menu : MonoBehaviour
 
     public void CheckPasswordAndOpenPanel()
     {
+        AudioManager.instance.PlaySound(clickSFX);
+
         Debug.Log("Method terpanggil");
 
         if (kodeInputField == null)

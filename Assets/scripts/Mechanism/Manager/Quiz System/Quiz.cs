@@ -14,6 +14,9 @@ public class Quiz : MonoBehaviour
     [SerializeField] GameObject joystick;
     private bool playerInRange = false;
 
+    [Header("Audio Reference")]
+    [SerializeField] AudioClip clickSFX;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -54,6 +57,7 @@ public class Quiz : MonoBehaviour
                     if (hit.collider != null && hit.collider.gameObject == this.gameObject)
                     {
                         OpenQuizPanel();
+                        AudioManager.instance.PlaySound(clickSFX);
                     }
                 }
                 else

@@ -6499,6 +6499,7 @@ MonoBehaviour:
   tinjauanCanvas: {fileID: 1402582614}
   playerNamaText: {fileID: 39113248}
   kodeInputField: {fileID: 1205601663}
+  clickSFX: {fileID: 8300000, guid: 307dd3ba521b3254597608d8ffa84273, type: 3}
 --- !u!4 &1921014737
 Transform:
   m_ObjectHideFlags: 0

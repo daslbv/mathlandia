@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
     [Header("Script Reference")]
     [SerializeField] PlayerStatus playerStatus;
 
+    [Header("Audio Reference")]
+    [SerializeField] AudioClip clickSFX;
+
     void Awake()
     {
         
@@ -64,6 +67,8 @@ public class LevelManager : MonoBehaviour
         });
         resumeButton.interactable = true;
         quitButton.interactable = true;
+
+        AudioManager.instance.PlaySound(clickSFX);
     }
 
     public void Resume()
@@ -74,15 +79,18 @@ public class LevelManager : MonoBehaviour
             pausedPanel.SetActive(false);
             pauseButton.interactable = true;            
         });
+        AudioManager.instance.PlaySound(clickSFX);
     }
 
     public void Home()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu Level"); // Pindah ke Home
+        AudioManager.instance.PlaySound(clickSFX);
     }
 
     public void NextLevel()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevelName); // Pindah ke level berikutnya
+        AudioManager.instance.PlaySound(clickSFX);
     }
 }
