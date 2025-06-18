@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -92,5 +93,10 @@ public class LevelManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevelName); // Pindah ke level berikutnya
         AudioManager.instance.PlaySound(clickSFX);
+    }
+
+    public void GoToHome()
+    {
+        SceneManager.LoadScene("home");
     }
 }

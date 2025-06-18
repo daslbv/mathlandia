@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Tinjauan : MonoBehaviour
 {
@@ -89,5 +90,10 @@ public class Tinjauan : MonoBehaviour
         int detik = Mathf.FloorToInt(waktu % 60f);
         string waktuFormatted = string.Format("{0:00}:{1:00}", menit, detik);
         return $"{totalWrong} salah, {waktuFormatted} waktu";
+    }
+
+    public void GoToHome()
+    {
+        SceneManager.LoadScene("home");
     }
 }
